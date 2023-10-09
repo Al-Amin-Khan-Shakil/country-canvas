@@ -8,7 +8,7 @@ const initialState = {
   error: '',
 };
 
-const allCountries = createAsyncThunk('country/allCountries', async () => {
+export const allCountries = createAsyncThunk('country/allCountries', async () => {
   try {
     const response = await axios.get('https://restcountries.com/v3.1/all');
     const { data } = response;
@@ -23,7 +23,20 @@ const countrySlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-
+    builder
+      .addCase(allCountries.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(allCountries.fulfilled, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = action.payload;
+        state.error = '';
+      })
+      .addCase(allCountries.rejected, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = [];
+        state.error = action.payload;
+      });
   },
 });
 
