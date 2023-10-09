@@ -27,4 +27,4 @@ const countrySlice = createSlice({
   },
 });
 
-export default countrySlice;
+export default countrySlice.reducer;
