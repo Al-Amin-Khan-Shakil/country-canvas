@@ -57,6 +57,7 @@ const countrySlice = createSlice({
         state.regionalCountries = action.payload.map((country) => ({
           name: country.name.common,
           area: country.area,
+          code: country.cca3,
           flag: country.flags.svg,
           official: country.name.official,
         }));
@@ -75,6 +76,7 @@ const countrySlice = createSlice({
         state.regionalCountries = action.payload.map((country) => ({
           name: country.name.common,
           area: country.area,
+          code: country.cca3,
           flag: country.flags.svg,
           official: country.name.official,
         }));
@@ -94,7 +96,6 @@ const countrySlice = createSlice({
           name: action.payload[0].name.common,
           area: action.payload[0].area,
           flag: action.payload[0].flags.svg,
-          code: action.payload[0].cca3,
           region: action.payload[0].region,
           subregion: action.payload[0].subregion,
           population: action.payload[0].population,
