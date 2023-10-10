@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { allCountries, searchRegion } from '../redux/country/countriSlice';
+import { allCountries, searchRegion, countryDetails } from '../redux/country/countriSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries.regionalCountries);
+  const country = useSelector((state) => state.countries.singleCountry);
 
   useEffect(() => {
     if (!countries.length) {
@@ -12,11 +13,11 @@ const Home = () => {
     }
   }, []);
 
-  console.log(countries);
+  console.log(country);
   return (
     <>
       <div value="asia">
-        <button type="button" onClick={() => dispatch(searchRegion('Asia'))}>
+        <button type="button" onClick={() => dispatch(countryDetails('French Polynesia'))}>
           Asia
         </button>
       </div>

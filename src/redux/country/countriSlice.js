@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   regionalCountries: [],
-  singleCountry: [],
+  singleCountry: {},
   loading: false,
   error: '',
   region: '',
@@ -22,6 +22,16 @@ export const allCountries = createAsyncThunk('country/allCountries', async () =>
 export const searchRegion = createAsyncThunk('country/searchRegion', async (region) => {
   try {
     const response = await axios.get(`https://restcountries.com/v3.1/region/${region}`);
+    const { data } = response;
+    return data;
+  } catch (error) {
+    throw error(error.message);
+  }
+});
+
+export const countryDetails = createAsyncThunk('country/countryDetails', async (name) => {
+  try {
+    const response = await axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
     const { data } = response;
     return data;
   } catch (error) {
@@ -73,6 +83,30 @@ const countrySlice = createSlice({
       .addCase(searchRegion.rejected, (state, action) => {
         state.loading = false;
         state.regionalCountries = [];
+        state.error = action.payload;
+      })
+      .addCase(countryDetails.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(countryDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        state.singleCountry = {
+          name: action.payload[0].name.common,
+          area: action.payload[0].area,
+          flag: action.payload[0].flags.svg,
+          code: action.payload[0].cca3,
+          region: action.payload[0].region,
+          subregion: action.payload[0].subregion,
+          population: action.payload[0].population,
+          timezones: action.payload[0].timezones[0],
+          startOfWeek: action.payload[0].startOfWeek,
+          official: action.payload[0].name.official,
+        };
+        state.error = '';
+      })
+      .addCase(countryDetails.rejected, (state, action) => {
+        state.loading = false;
+        state.singleCountry = [];
         state.error = action.payload;
       });
   },
