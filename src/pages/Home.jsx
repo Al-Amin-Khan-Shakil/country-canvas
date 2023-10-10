@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { allCountries, searchRegion, countryDetails } from '../redux/country/countriSlice';
+import { allCountries, countryDetails } from '../redux/country/countriSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries.regionalCountries);
-  const country = useSelector((state) => state.countries.singleCountry);
 
   useEffect(() => {
     if (!countries.length) {
@@ -13,7 +12,6 @@ const Home = () => {
     }
   }, []);
 
-  console.log(country);
   return (
     <>
       <div value="asia">
