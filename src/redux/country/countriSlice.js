@@ -29,9 +29,9 @@ export const searchRegion = createAsyncThunk('country/searchRegion', async (regi
   }
 });
 
-export const countryDetails = createAsyncThunk('country/countryDetails', async (name) => {
+export const countryDetails = createAsyncThunk('country/countryDetails', async (code) => {
   try {
-    const response = await axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
+    const response = await axios.get(`https://restcountries.com/v3.1/alpha/${code}`);
     const { data } = response;
     return data;
   } catch (error) {
