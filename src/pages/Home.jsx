@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { allCountries, searchRegion } from '../redux/country/countriSlice';
+import { allCountries } from '../redux/country/countriSlice';
+import Continent from '../components/Continents';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -15,10 +16,8 @@ const Home = () => {
 
   return (
     <>
-      <div value="asia">
-        <button type="button" onClick={() => dispatch(searchRegion('Asia'))}>
-          Asia
-        </button>
+      <div className="continent">
+        <Continent />
       </div>
       <div className="content-container">
         <ul className="country-list">
