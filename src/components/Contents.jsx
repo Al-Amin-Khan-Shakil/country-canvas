@@ -18,16 +18,14 @@ const Contents = () => {
 
   return (
     <>
-      {loading ? <GridLoader color="#b4f6ff" loading={loading} size={10} className="grid-loader" />
+      {loading ? <GridLoader color="#b4f6ff" loading={loading} size={20} className="grid-loader" />
         : (
           <ul className="country-list">
             {countries.map((country) => (
               <li className="list-item" key={country.name}>
-                <Link to={`details/${country.code}`}>
+                <Link to={`details/${country.code}`} className="country-link">
                   <div className="img-container">
-                    <img src={country.flag} alt="" width="100px" height="60px" />
-                  </div>
-                  <div className="arrow-container">
+                    <img src={country.flag} alt={`flag of ${country.name}`} className="flag-image" />
                     <BsFillArrowRightCircleFill />
                   </div>
                   <div className="name-container">

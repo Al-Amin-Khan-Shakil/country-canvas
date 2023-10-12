@@ -18,21 +18,21 @@ const Details = () => {
 
   return (
     <div className="details">
-      <Link to="/">
+      <Link to="/" className="back-btn">
         <BsFillArrowLeftCircleFill />
       </Link>
       {loading ? (
         <BeatLoader
-          color="#36d7b7"
+          color="#b4f6ff"
           loading={loading}
-          size={30}
+          size={20}
           className="beat-loader"
         />
       )
         : (
           <div className="details-container">
             <div className="flag-container">
-              <img src={country.flag} alt="" width="200px" />
+              <img src={country.flag} alt={`flag of ${country.name}`} className="flag-image2" />
             </div>
             <ul className="details-list">
               <li className="details-item">

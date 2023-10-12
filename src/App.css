@@ -85,3 +85,129 @@
   transform: translate(-50%);
   margin-top: 10vh;
 }
+
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.list-item {
+  width: 50%;
+  height: 22vh;
+  list-style-type: none;
+}
+
+.list-item:nth-child(4n-1),
+.list-item:nth-child(4n-2) {
+  background-color: #0177bb;
+}
+
+.country-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.flag-image {
+  width: 60%;
+  max-width: 170px;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.country-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  position: relative;
+}
+
+.back-btn {
+  padding: 1vw;
+}
+
+.beat-loader {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20vh;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.flag-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2vw;
+}
+
+.flag-image2 {
+  width: 60%;
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.details-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 1vw;
+}
+
+.details-item:nth-child(odd) {
+  background-color: #0177bb;
+}
+
+.details-item:first-child {
+  justify-content: center;
+  text-align: center;
+}
+
+.details-item h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
