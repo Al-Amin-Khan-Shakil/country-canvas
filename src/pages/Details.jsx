@@ -36,11 +36,11 @@ const Details = () => {
             </div>
             <ul className="details-list">
               <li className="details-item">
-                <h2>{country.name}</h2>
+                <h2 className="name">{country.name}</h2>
               </li>
               <li className="details-item">
                 <div>Official Name:</div>
-                <h3>{country.official}</h3>
+                <h3 className="official-name">{country.official}</h3>
               </li>
               <li className="details-item">
                 <div>Area:</div>
