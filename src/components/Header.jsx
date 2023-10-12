@@ -4,6 +4,7 @@ import { FaSearchLocation } from 'react-icons/fa';
 
 const Header = () => {
   const location = useLocation();
+
   return (
     <>
       <header className="header">
@@ -11,7 +12,7 @@ const Header = () => {
 
           <div className="nav-item">
             <NavLink to="/" className="navlink">
-              <AiOutlineHome />
+              <AiOutlineHome className="home-icon" />
             </NavLink>
           </div>
           <div className="nav-item">

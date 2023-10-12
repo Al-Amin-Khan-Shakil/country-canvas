@@ -64,7 +64,7 @@ const Details = () => {
               </li>
               <li className="details-item">
                 <div>Week Starts:</div>
-                <div>{country.startOfWeek.toUpperCase()}</div>
+                <div>{country.startOfWeek}</div>
               </li>
             </ul>
           </div>
