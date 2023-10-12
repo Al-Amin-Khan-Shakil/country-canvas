@@ -18,7 +18,7 @@ const Contents = () => {
 
   return (
     <>
-      {loading ? <GridLoader color="#36d7b7" loading={loading} size={50} className="grid-loader" />
+      {loading ? <GridLoader color="#b4f6ff" loading={loading} size={10} className="grid-loader" />
         : (
           <ul className="country-list">
             {countries.map((country) => (
