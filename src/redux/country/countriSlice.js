@@ -6,7 +6,6 @@ const initialState = {
   singleCountry: {},
   loading: false,
   error: '',
-  region: '',
 };
 
 export const allCountries = createAsyncThunk('country/allCountries', async () => {

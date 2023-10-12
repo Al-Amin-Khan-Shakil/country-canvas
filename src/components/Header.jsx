@@ -8,24 +8,20 @@ const Header = () => {
     <>
       <header className="header">
         <nav className="navbar">
-          <ul className="nav-menu">
-            <li className="nav-item">
-              <NavLink to="/" className="navlink">
-                <AiOutlineHome />
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <p>{location.pathname === '/' ? 'HOME' : 'DETAILS'}</p>
-            </li>
-            <li className="nav-item">
-              <NavLink to="" className="navlink">
-                <FaSearchLocation />
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <AiFillSetting />
-            </li>
-          </ul>
+
+          <div className="nav-item">
+            <NavLink to="/" className="navlink">
+              <AiOutlineHome />
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <p className="page-title">{location.pathname === '/' ? 'HOME' : 'DETAILS'}</p>
+          </div>
+          <div className="nav-item">
+            <FaSearchLocation className="search-icon" />
+            <AiFillSetting className="setting-icon" />
+          </div>
+
         </nav>
       </header>
       <Outlet />
