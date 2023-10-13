@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -51,6 +52,12 @@
 - **Redux Toolkit**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!--Live Server-->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Country Canvas Live Link](https://globe-app.onrender.com/)
 
 <!-- GETTING STARTED -->
 
