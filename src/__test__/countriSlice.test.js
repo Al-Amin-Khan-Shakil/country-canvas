@@ -18,7 +18,7 @@ describe('test all reducer', () => {
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' },
+      official: { official: 'Official Name' }
     }];
     const state = countryReducer(initialState, allCountries.fulfilled(payload));
     expect(state.loading).toBe(false);
@@ -32,14 +32,14 @@ describe('test all reducer', () => {
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' },
+      official: { official: 'Official Name' },
     },
     {
       name: { common: 'Country 1' },
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' },
+      official: { official: 'Official Name' },
     }];
     const state = countryReducer(initialState, searchRegion.fulfilled(payload));
     expect(state.loading).toBe(false);
