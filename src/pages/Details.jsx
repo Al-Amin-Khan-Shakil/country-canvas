@@ -16,7 +16,7 @@ const Details = () => {
     if (code) {
       dispatch(countryDetails(code.toLowerCase()));
     }
-  }, []);
+  }, [dispatch, code]);
 
   return (
     <div className="details">
