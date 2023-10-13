@@ -59,6 +59,12 @@
 
 - [Country Canvas Live Link](https://globe-app.onrender.com/)
 
+## Presentation Video
+
+<iframe width="560" height="315" src="https://www.loom.com/share/d0eaf9461dbe4d77a1625b0a6e1c2fb0?sid=fe7e10ae-23e8-4028-adfa-adf285d746d5" frameborder="0" allowfullscreen></iframe>
+
+- [Presentation Video Link](https://www.loom.com/share/d0eaf9461dbe4d77a1625b0a6e1c2fb0?sid=0c81eb6c-c0a4-4e20-9121-5d1689a55d3c)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
