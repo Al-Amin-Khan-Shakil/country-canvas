@@ -14,7 +14,7 @@ const Contents = () => {
     if (!countries.length) {
       dispatch(allCountries());
     }
-  }, []);
+  }, [dispatch, countries]);
 
   return (
     <>

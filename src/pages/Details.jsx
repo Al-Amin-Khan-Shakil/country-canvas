@@ -13,8 +13,10 @@ const Details = () => {
   const { code } = params;
 
   useEffect(() => {
-    dispatch(countryDetails(code.toLowerCase()));
-  }, []);
+    if (code) {
+      dispatch(countryDetails(code.toLowerCase()));
+    }
+  }, [dispatch, code]);
 
   return (
     <div className="details">
