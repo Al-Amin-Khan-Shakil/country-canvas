@@ -18,7 +18,7 @@ describe('test all reducer', () => {
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      official: { official: 'Official Name' }
+      official: { official: 'Official Name' },
     }];
     const state = countryReducer(initialState, allCountries.fulfilled(payload));
     expect(state.loading).toBe(false);
