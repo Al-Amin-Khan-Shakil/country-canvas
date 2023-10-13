@@ -1,4 +1,6 @@
-import countryReducer, { initialState, allCountries, searchRegion, countryDetails } from "../redux/country/countriSlice";
+import countryReducer, {
+  initialState, allCountries, searchRegion, countryDetails,
+} from '../redux/country/countriSlice';
 
 describe('test all reducer', () => {
   it('test initial state', () => {
@@ -16,34 +18,34 @@ describe('test all reducer', () => {
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' }
+      name: { official: 'Official Name' },
     }];
     const state = countryReducer(initialState, allCountries.fulfilled(payload));
     expect(state.loading).toBe(false);
     expect(state.regionalCountries.length).toEqual(1);
     expect(state.error).toEqual('');
-  })
-  
+  });
+
   it('test regional countries', () => {
     const payload = [{
       name: { common: 'Country 1' },
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' }
+      name: { official: 'Official Name' },
     },
     {
       name: { common: 'Country 1' },
       area: 100,
       cca3: 'ABC',
       flags: { svg: 'flag-url' },
-      name: { official: 'Official Name' }
+      name: { official: 'Official Name' },
     }];
     const state = countryReducer(initialState, searchRegion.fulfilled(payload));
     expect(state.loading).toBe(false);
     expect(state.regionalCountries.length).toEqual(2);
     expect(state.error).toEqual('');
-  })
+  });
 
   it('test country details', () => {
     const payload = [{
@@ -61,16 +63,17 @@ describe('test all reducer', () => {
     expect(state.loading).toBe(false);
     expect(state.singleCountry).toEqual(
       {
-        "area": 100,
-        "flag": "flag-url",
-        "name": "Country 1",
-        "official": undefined,
-        "population": 1000000,
-        "region": "Region 1",
-        "startOfWeek": "Sunday",
-        "subregion": "Subregion 1", 
-        "timezones": "UTC"}
+        area: 100,
+        flag: 'flag-url',
+        name: 'Country 1',
+        official: undefined,
+        population: 1000000,
+        region: 'Region 1',
+        startOfWeek: 'Sunday',
+        subregion: 'Subregion 1',
+        timezones: 'UTC',
+      },
     );
     expect(state.error).toEqual('');
-  })
+  });
 });

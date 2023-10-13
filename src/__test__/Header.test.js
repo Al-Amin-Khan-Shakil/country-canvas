@@ -1,14 +1,12 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import Header from "../components/Header";
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from '../components/Header';
 
-const MockHeader = () => {
-  return (
-    <BrowserRouter>
-      <Header />
-    </BrowserRouter>
-  )
-}
+const MockHeader = () => (
+  <BrowserRouter>
+    <Header />
+  </BrowserRouter>
+);
 
 it('test header', () => {
   render(<MockHeader />);
@@ -18,4 +16,4 @@ it('test header', () => {
 it('test header', () => {
   render(<MockHeader />);
   expect(screen.getByRole('link')).toBeTruthy();
-})
+});
